@@ -1,0 +1,27 @@
+<div class="tablediv">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ column }}
+      </mat-header-cell>
+      <div *ngIf="column==='image';else elseBlock">
+        <mat-cell *matCellDef="let element">
+          <img [src]="element[column]" width="50px" />
+        </mat-cell>
+      </div>
+      <ng-template #elseBlock>
+        <mat-cell *matCellDef="let element">
+          {{ element[column]}}
+        </mat-cell>
+      </ng-template>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+</div>
