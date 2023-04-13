@@ -1,0 +1,49 @@
+<form [formGroup]="myreg" (ngSubmit)="onSubmit()">
+  <!-- fullNmae  -->
+  <mat-form-field appearance="outline">
+    <mat-label>FullName</mat-label>
+    <input matInput formControlName="fullName" required>
+    <mat-error
+      *ngIf="myreg.controls['fullName'].invalid && (myreg.controls['fullName'].errors||myreg.controls['fullName'].touched)">
+      <span *ngIf="myreg.controls['fullName'].errors?.['required']">UserName Required</span>
+      <span *ngIf="myreg.controls['fullName'].errors?.['fullName']">Invalid Name</span>
+    </mat-error>
+  </mat-form-field>
+
+   <!-- email  -->
+   <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" required>
+    <mat-error
+      *ngIf="myreg.controls['email'].invalid && (myreg.controls['email'].errors||myreg.controls['email'].touched)">
+      <span *ngIf="myreg.controls['email'].errors?.['required']">Email is required.</span>
+      <span *ngIf="myreg.controls['email'].errors?.['email']">Please enter a valid email address.</span>
+    </mat-error>
+  </mat-form-field>
+  <!-- phone  -->
+  <mat-form-field appearance="outline">
+    <mat-label>Phone Number</mat-label>
+    <input matInput formControlName="phone" type="tel" required>
+    <mat-error
+      *ngIf="myreg.controls['phone'].invalid && (myreg.controls['phone'].errors||myreg.controls['phone'].touched)">
+      <span *ngIf="myreg.controls['phone'].errors?.['required']">Phone Number is required.</span>
+      <span *ngIf="myreg.controls['phone'].errors?.['phone']">Please enter a valid Valid Phone number.</span>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- address  -->
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address" type="text" required>
+    <mat-error
+      *ngIf="myreg.controls['address'].invalid && (myreg.controls['address'].errors||myreg.controls['address'].touched)">
+      <span *ngIf="myreg.controls['address'].errors?.['required']">Address is required.</span>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+
+
+
+
+
+</form>

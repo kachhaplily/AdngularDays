@@ -17,6 +17,7 @@ export class TableDataComponent implements  OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngOnInit(): void {
     this.dataService.getData().subscribe(y => {
+      console.log(y)
       this.displayedColumns = Object.keys(y[0]);
       this.dataSource = y
       this.dataSource=new MatTableDataSource(y)

@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -5,11 +6,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  private apiUrl = '/api';
+export class FakestoreService {
 
   constructor( private http:HttpClient) { }
-  getData():Observable<any>{
-    return this.http.get(`${this.apiUrl}/contacts`);
+  getfake():Observable<any>{
+    return this.http.get('https://dummyjson.com/products');
   }
 }

@@ -64,7 +64,8 @@
               "browserTarget": "AdngularDays:build:production"
             },
             "development": {
-              "browserTarget": "AdngularDays:build:development"
+              "browserTarget": "AdngularDays:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
